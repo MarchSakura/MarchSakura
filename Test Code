@@ -1,0 +1,28 @@
+const { SlashCommandBuilder } = require('discord.js');
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName('kiss')
+        .setDescription('Kiss someone')
+        .addUserOption(option =>
+            option
+                .setName('user')
+                .setDescription('Kiss who?')
+                .setRequired(true)
+        ),
+    async execute(interaction, Discord) {
+        /**let keywords = 'kiss anime';
+        let url = `https://g.tenor.com/v1/search?q=${keywords}&key=${process.env.TENORKEY}&contentfilter=low`;
+        let response = await fetch(url);
+        let json = await response.json();
+        const index = Math.floor(Math.random() * json.results.length);
+**/
+        const embed = new Discord.MessageEmbed()
+        .setColor('#FF8DC4')
+        .setTitle(`*Mwah! UwU ${interaction.options.getUser('user')}*`,)
+        
+        .setImage("https://tenor.com/view/kiss-anime-cute-gif-14820878")
+
+        message.channel.send(embed + "https://tenor.com/view/kiss-anime-cute-gif-14820878")
+    },
+};
